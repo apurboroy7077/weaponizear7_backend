@@ -15,9 +15,9 @@ let delayMiddleware = (req, res, next) => {
   setTimeout(next, 3000);
 };
 // USING ROUTES--------------------------------------------------------------------
-app.use("/api/user", delayMiddleware, userRouter);
-app.use("/api/product", delayMiddleware, productRouter);
-app.use("/api/admin", delayMiddleware, adminRouter);
+app.use("/api/user", userRouter);
+app.use("/api/product", productRouter);
+app.use("/api/admin", adminRouter);
 //ERROR HANDLING-----------------------------------------------------------------------------
 
 app.use("*", (req, res) => {
