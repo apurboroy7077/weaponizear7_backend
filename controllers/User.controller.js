@@ -23,7 +23,7 @@ let loginController = async (req, res, next) => {
       res.status(404).send({ success: false, message: "Incorrect Password" });
       return;
     }
-    let authToken = jwt.sign({ email }, jwtSecretKey, { expiresIn: "60m" });
+    let authToken = jwt.sign({ email }, jwtSecretKey, { expiresIn: "60000m" });
     res.status(200).send({ success: true, authToken: authToken });
   } catch (error) {
     next(error);

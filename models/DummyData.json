@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Product 111111",
+    "price": 50,
+    "description": "This is the first product description.",
+    "imageURL": "https://example.com/image1.jpg",
+    "email": "apurboroy7077@gmail.com"
+  },
+  {
+    "name": "Product 112111",
+    "price": 75,
+    "description": "Description for the second product.",
+    "imageURL": "https://example.com/image2.jpg",
+    "email": "apurboroy7077@gmail.com"
+  },
+  {
+    "name": "Product 113111",
+    "price": 100,
+    "description": "Third product's description goes here.",
+    "imageURL": "https://example.com/image3.jpg",
+    "email": "apurboroy7077@gmail.com"
+  },
+  {
+    "name": "Product 114111",
+    "price": 120,
+    "description": "Description for the fourth product.",
+    "imageURL": "https://example.com/image4.jpg",
+    "email": "apurboroy7077@gmail.com"
+  },
+  {
+    "name": "Product 115111",
+    "price": 80,
+    "description": "Fifth product description goes here.",
+    "imageURL": "https://example.com/image5.jpg",
+    "email": "apurboroy7077@gmail.com"
+  },
+  {
+    "name": "Product 116111",
+    "price": 95,
+    "description": "Description for the sixth product.",
+    "imageURL": "https://example.com/image6.jpg",
+    "email": "apurboroy7077@gmail.com"
+  },
+  {
+    "name": "Product 117111",
+    "price": 110,
+    "description": "Seventh product description goes here.",
+    "imageURL": "https://example.com/image7.jpg",
+    "email": "apurboroy7077@gmail.com"
+  },
+  {
+    "name": "Product 118111",
+    "price": 130,
+    "description": "Description for the eighth product.",
+    "imageURL": "https://example.com/image8.jpg",
+    "email": "apurboroy7077@gmail.com"
+  },
+  {
+    "name": "Product 119111",
+    "price": 70,
+    "description": "Ninth product's description goes here.",
+    "imageURL": "https://example.com/image9.jpg",
+    "email": "apurboroy7077@gmail.com"
+  },
+  {
+    "name": "Product 120111",
+    "price": 150,
+    "description": "Description for the tenth product.",
+    "imageURL": "https://example.com/image10.jpg",
+    "email": "apurboroy7077@gmail.com"
+  }
+]

@@ -63,6 +63,14 @@ let productSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  imageURL: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
 });
 let userDataModel = mongoose.model("userdatas", userSchema);
 let orderDataModel = mongoose.model("orderdatas", orderSchema);
