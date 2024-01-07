@@ -10,6 +10,7 @@ let connectDB = async () => {
     .catch((error) => {
       console.log(error);
       console.log("SOMETHING WENT WRONG CONNECTING TO DATABASE.");
+      connectDB();
     });
 };
 module.exports = { connectDB };

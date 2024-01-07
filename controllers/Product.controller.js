@@ -1,12 +1,18 @@
-let jwt = require("jsonwebtoken");
-let fs = require("fs");
-const { jwtSecretKey } = require("../configs/Variables");
 const {
   userDataModel,
   orderDataModel,
   productDataModel,
 } = require("../models/Schemas.model");
+const {
+  uploadProductController,
+} = require("./products_controller/product_upload.controller");
 const ar7id = require("ar7id");
+const { initializeApp } = require("firebase/app");
+const { firebaseConfig } = require("../configs/firebase.config");
+let jwt = require("jsonwebtoken");
+let fs = require("fs");
+const { jwtSecretKey } = require("../configs/Variables");
+
 let orderController = async (req, res, next) => {
   try {
     let { orders, authToken } = req.body;
@@ -48,42 +54,10 @@ let orderHistoryController = async (req, res, next) => {
     next(error);
   }
 };
-let uploadProductController = async (req, res, next) => {
-  try {
-    let { productName, productPrice, productDescription } = req.body;
-    let isProduct = await productDataModel.findOne({ name: productName });
-    if (isProduct) {
-      res.status(404).send({
-        success: false,
-        message:
-          "Product with same Name already Exists, Plz choose a different Name",
-      });
-      return;
-    }
 
-    await productDataModel.create({
-      name: productName,
-      price: productPrice,
-      description: productDescription,
-    });
-    if (req.file) {
-      const destinationPath = "public/images/products/";
-      if (!fs.existsSync(destinationPath)) {
-        fs.mkdirSync(destinationPath, { recursive: true });
-      }
-      let filePath = `${destinationPath}${productName}.jpg`;
-      fs.writeFileSync(filePath, req.file.buffer);
-    }
-    res
-      .status(200)
-      .send({ success: true, message: `${productName} is Stored on Server.` });
-  } catch (error) {
-    next(error);
-  }
-};
 let getProductsSelledByUsers = async (req, res, next) => {
   try {
-    let productsSelledByUsers = await productDataModel.find({});
+    let productsSelledByUsers = await productDataModel.find({}).limit(10);
     if (productsSelledByUsers.length < 1) {
       res.status(404).send({
         success: false,
@@ -104,9 +78,10 @@ let getProductImage = async (req, res, next) => {
     next(error);
   }
 };
+
 module.exports = {
   orderController,
   orderHistoryController,
-  uploadProductController,
   getProductsSelledByUsers,
+  uploadProductController,
 };

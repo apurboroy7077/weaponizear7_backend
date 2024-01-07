@@ -2,6 +2,7 @@ let express = require("express");
 let app = express();
 let cors = require("cors");
 let morgan = require("morgan");
+
 const { userRouter } = require("./routes/User.route");
 const { productRouter } = require("./routes/Product.route");
 const { adminRouter } = require("./routes/Admin.route");
@@ -14,6 +15,7 @@ app.use(express.static("public"));
 let delayMiddleware = (req, res, next) => {
   setTimeout(next, 3000);
 };
+
 // USING ROUTES--------------------------------------------------------------------
 app.use("/api/user", userRouter);
 app.use("/api/product", productRouter);
